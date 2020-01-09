@@ -10,13 +10,16 @@ Installing GO
 - Installing other packages:
 - Learning Go: [A tour of GO](https://tour.golang.org)
 
-1. main package is executable and need main func
-2. variable declaration, type at the last: var a int, var b int and  var x, y int
-3. function return  func add(x,y int) int {}
-3. func multiple return: function split(a int) (x, y) int {} also call naked func. returns x and y
-4. variable with intializer: var i, j int = 1, 2
-5. Short var declaration l:=40 , available within the func
-6. variable declarations may be "factored" into blocks, as with import statements:
+* Every Go Program is made up of packages
+*
+
+* main package is executable and need main func
+* variable declaration, type at the last: var a int, var b int and  var x, y int
+* function return  func add(x,y int) int {}
+* func multiple return: function split(a int) (x, y) int {} also call naked func. returns x and y
+* variable with intializer: var i, j int = 1, 2
+* Short var declaration l:=40 , available within the func
+* variable declarations may be "factored" into blocks, as with import statements:
 ```go
     import (
 	"fmt"
@@ -29,8 +32,10 @@ Installing GO
 	z      complex128 = cmplx.Sqrt(-5 + 12i)
     )
 ```
-7.  default values for variables: 0 for numeric type, false for bool and "" for string.
-8.
+*	default values for variables: 0 for numeric type, false for bool and "" for string.
+* ```go run .``` or ```go run path_to_main``` executes the code.
+* it create binary executable when running ```go build .``` The name of the executable comes from module name define on .mod file if exist, else the folder name where main file is located.
+
 
 
 

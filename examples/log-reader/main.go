@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"log"
 	"os"
@@ -9,7 +10,9 @@ import (
 )
 
 func main() {
-	f, err := os.Open("myapp.log")
+	path := flag.String("path", "myapp.log", "The path to the log that should be analyzed")
+	level := flag.String("level", "ERROR", "Log level to search for. Options are DEBUG, INFO, ERROR, and CRITICAL")
+	f, err := os.Open(*path)
 	if err != nil {
 		log.Fatal("____error here.")
 	}
@@ -22,7 +25,7 @@ func main() {
 			log.Fatal("Error reading...")
 			break
 		}
-		if strings.Contains(line, "ERROR") {
+		if strings.Contains(line, *level) {
 			fmt.Println(line)
 		}
 
